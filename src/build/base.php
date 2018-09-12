@@ -94,6 +94,21 @@ class base {
     }
 
     /**
+     * 生成二维码图片
+     *
+     * @param string $content 内容
+     */
+    public function base64($content = '') {
+        $this->renderer->setHeight($this->width);
+        $this->renderer->setWidth($this->height);
+        $writer = new Writer($this->renderer);
+        //header('Content-type:image/png');
+        $png         = $writer->writeString($content);
+        $imageString = base64_encode($png);
+        return $imageString;
+    }
+
+    /**
      * 生成二维码文件
      *
      * @param string $content  二维码内容

@@ -2,7 +2,7 @@
     "defer":
     {
         "name": "延时加载",
-        "value": true
+        "value": false
     },
     "versions":
     {
